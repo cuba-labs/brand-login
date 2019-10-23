@@ -4,10 +4,6 @@
   width: 100%;
 }
 
-.c-login-container {
-
-}
-
 .c-login-image-container {
   flex-grow: 1;
   height: 100%;
@@ -43,4 +39,31 @@
   border-width: 0;
   box-shadow: none;
   text-align: right;
+}
+
+.c-login-locales-image {
+  height: 20px;
+}
+
+.c-login-powered-by-label {
+  line-height: 40px;
+}
+
+.c-login-powered-by-link {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.c-login-powered-by-link a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.c-login-powered-by-image {
+  height: 20px;
+  margin: 10px 0;
 }

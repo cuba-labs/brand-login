@@ -95,7 +95,7 @@ public class BrandingLoginScreen extends Screen {
         localesSelect.addValueChangeListener(e -> {
             app.setLocale(e.getValue());
 
-            BrandingLoginScreen.AuthInfo authInfo = new BrandingLoginScreen.AuthInfo(loginField.getValue(),
+            AuthInfo authInfo = new AuthInfo(loginField.getValue(),
                     passwordField.getValue(),
                     rememberMeCheckBox.getValue());
 
@@ -113,7 +113,7 @@ public class BrandingLoginScreen extends Screen {
         });
     }
 
-    protected void setAuthInfo(BrandingLoginScreen.AuthInfo authInfo) {
+    protected void setAuthInfo(AuthInfo authInfo) {
         loginField.setValue(authInfo.getLogin());
         passwordField.setValue(authInfo.getPassword());
         rememberMeCheckBox.setValue(authInfo.getRememberMe());

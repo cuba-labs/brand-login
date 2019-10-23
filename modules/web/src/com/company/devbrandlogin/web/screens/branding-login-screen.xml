@@ -49,17 +49,37 @@
                         </vbox>
                     </vbox>
                 </vbox>
-                <hbox id="localesSelectBox" width="100%" expand="poweredByLink">
-                    <label id="poweredByLink"
-                           align="MIDDLE_CENTER"
-                           htmlEnabled="true"
-                           value="mainMsg://cuba.poweredBy"/>
-                    <lookupField id="localesSelect"
-                                 align="MIDDLE_RIGHT"
-                                 width="120px"
-                                 nullOptionVisible="false"
-                                 stylename="c-login-locales-select"
-                                 textInputAllowed="false"/>
+                <hbox id="bottomPanel"
+                      height="40px"
+                      width="100%"
+                      margin="false, true, false, true"
+                      expand="localesSelectBox">
+                    <cssLayout id="poweredByBox" height="100%">
+                        <label id="poweredByLabel"
+                               stylename="c-login-powered-by-label"
+                               value="msg://poweredByLabel"/>
+                        <label id="poweredByLink"
+                               htmlEnabled="true"
+                               stylename="c-login-powered-by-link"
+                               value="msg://poweredByLink"/>
+                        <image id="poweredByImage" scaleMode="SCALE_DOWN" align="MIDDLE_LEFT"
+                               stylename="c-login-powered-by-image">
+                            <classpath path="com/company/devbrandlogin/web/screens/poweredby_icon.svg"/>
+                        </image>
+                    </cssLayout>
+                    <hbox id="localesSelectBox" height="100%">
+                        <image id="countryImage" scaleMode="SCALE_DOWN" align="MIDDLE_RIGHT"
+                               box.expandRatio="1"
+                               stylename="c-login-locales-image">
+                            <classpath path="com/company/devbrandlogin/web/screens/united-kingdom.svg"/>
+                        </image>
+                        <lookupField id="localesSelect"
+                                     align="MIDDLE_RIGHT"
+                                     nullOptionVisible="false"
+                                     stylename="c-login-locales-select"
+                                     textInputAllowed="false"
+                                     width="100px"/>
+                    </hbox>
                 </hbox>
             </vbox>
             <image id="brandingImage"
