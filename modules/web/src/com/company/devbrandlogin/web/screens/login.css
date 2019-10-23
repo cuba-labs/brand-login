@@ -1,0 +1,46 @@
+.c-login-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.c-login-container {
+
+}
+
+.c-login-image-container {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.c-login-container .c-login-field {
+  height: 40px;
+  width: 350px;
+  margin-top: 10px;
+}
+
+.c-login-container .c-login-button {
+  background: #1b6198;
+  border-radius: 3px;
+  color: #e8eff5;
+  margin-top: 40px;
+  height: 50px;
+  width: 200px;
+}
+
+.c-login-logo {
+  margin-bottom: 15px;
+}
+
+.c-login-welcome-label {
+  font-size: 25px;
+  color: #1b6198;
+  font-weight: 600;
+}
+
+.c-login-locales-select.v-filterselect > input.v-filterselect-input {
+  background: 0;
+  border-width: 0;
+  box-shadow: none;
+  text-align: right;
+}

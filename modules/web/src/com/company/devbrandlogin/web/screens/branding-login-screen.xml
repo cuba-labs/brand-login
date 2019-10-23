@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        messagesPack="com.company.devbrandlogin.web.screens">
+    <actions>
+        <action id="submit"
+                caption="msg://submitButton.caption"
+                invoke="login" shortcut="ENTER"/>
+    </actions>
+    <layout>
+        <cssLayout id="loginLayout" stylename="c-login-layout">
+            <vbox expand="loginPanel" width="500px" height="100%" stylename="c-login-container">
+                <vbox id="loginPanel">
+                    <vbox id="loginMainBox"
+                          align="MIDDLE_CENTER"
+                          margin="true"
+                          width="AUTO">
+                        <image id="logoImage"
+                               align="MIDDLE_CENTER"
+                               height="AUTO"
+                               scaleMode="SCALE_DOWN"
+                               width="AUTO"
+                               stylename="c-login-logo"/>
+                        <label id="welcomeLabel"
+                               align="MIDDLE_CENTER"
+                               value="mainMsg://loginWindow.welcomeLabel"
+                               stylename="c-login-welcome-label"/>
+                        <capsLockIndicator id="capsLockIndicator"
+                                           align="MIDDLE_CENTER"/>
+                        <vbox id="loginForm"
+                              spacing="true">
+                            <textField id="loginField"
+                                       caption="msg://loginField.caption"
+                                       htmlName="loginField"
+                                       inputPrompt="msg://loginField.placeholder"
+                                       stylename="c-login-field"/>
+                            <passwordField id="passwordField"
+                                           autocomplete="true"
+                                           capsLockIndicator="capsLockIndicator"
+                                           caption="msg://passwordField.caption"
+                                           htmlName="passwordField"
+                                           inputPrompt="msg://passwordField.placeholder"
+                                           stylename="c-login-field"/>
+                            <checkBox id="rememberMeCheckBox"
+                                      caption="mainMsg://loginWindow.rememberMe"/>
+                            <button id="loginButton"
+                                    action="submit"
+                                    align="MIDDLE_CENTER"
+                                    stylename="c-login-button"/>
+                        </vbox>
+                    </vbox>
+                </vbox>
+                <hbox id="localesSelectBox" width="100%" expand="poweredByLink">
+                    <label id="poweredByLink"
+                           align="MIDDLE_CENTER"
+                           htmlEnabled="true"
+                           value="mainMsg://cuba.poweredBy"/>
+                    <lookupField id="localesSelect"
+                                 align="MIDDLE_RIGHT"
+                                 width="120px"
+                                 nullOptionVisible="false"
+                                 stylename="c-login-locales-select"
+                                 textInputAllowed="false"/>
+                </hbox>
+            </vbox>
+            <image id="brandingImage"
+                   scaleMode="FILL"
+                   stylename="c-login-image-container">
+                <classpath path="com/company/devbrandlogin/web/screens/demo_pic.png"/>
+            </image>
+        </cssLayout>
+    </layout>
+</window>
