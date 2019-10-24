@@ -53,18 +53,17 @@
   line-height: 40px;
   font-size: 12px;
   font-weight: 900;
+  padding-right: 5px;
+  width: 70px;
 }
 
-.c-login-powered-by-link {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
-.c-login-powered-by-link a {
+.c-login-powered-by-label > a {
   display: block;
-  height: 15px;
   width: 85px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 70px;
   margin: 14px 0px;
 }
 

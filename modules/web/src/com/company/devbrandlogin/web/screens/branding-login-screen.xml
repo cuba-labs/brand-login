@@ -54,31 +54,28 @@
                       width="100%"
                       margin="false, true, false, true">
 
-                    <hbox id="poweredByBox"
-                          height="100%"
-                          spacing="true"
-                          stylename="c-login-powered-by-box"
-                          box.expandRatio="1">
+                    <cssLayout id="poweredByBox"
+                               height="100%"
+                               stylename="c-login-powered-by-box"
+                               box.expandRatio="1">
                         <label id="poweredByLabel"
+                               htmlEnabled="true"
                                stylename="c-login-powered-by-label"
                                value="msg://poweredByLabel"/>
-                        <cssLayout>
-                            <label id="poweredByLink"
-                                   htmlEnabled="true"
-                                   stylename="c-login-powered-by-link"
-                                   value="msg://poweredByLink"/>
-                            <image id="poweredByImage" scaleMode="SCALE_DOWN" align="MIDDLE_LEFT"
-                                   stylename="c-login-powered-by-image">
-                                <classpath path="com/company/devbrandlogin/web/screens/poweredby_icon.svg"/>
-                            </image>
-                        </cssLayout>
-                    </hbox>
+                        <image id="poweredByImage"
+                               scaleMode="SCALE_DOWN"
+                               stylename="c-login-powered-by-image">
+                            <classpath path="com/company/devbrandlogin/web/screens/poweredby_icon.svg"/>
+                        </image>
+                    </cssLayout>
 
                     <hbox id="localesSelectBox"
                           box.expandRatio="1"
                           height="100%"
                           width="100%">
-                        <image id="countryImage" scaleMode="SCALE_DOWN" align="MIDDLE_RIGHT"
+                        <image id="countryImage"
+                               scaleMode="SCALE_DOWN"
+                               align="MIDDLE_RIGHT"
                                box.expandRatio="1"
                                stylename="c-login-locales-image">
                             <classpath path="com/company/devbrandlogin/web/screens/united-kingdom.svg"/>
