@@ -57,13 +57,13 @@
 
                     <cssLayout id="poweredByBox"
                                height="100%"
-                               stylename="c-login-powered-by-box"
-                               box.expandRatio="1">
+                               stylename="c-login-powered-by-box">
                         <label id="poweredByLabel"
                                htmlEnabled="true"
                                stylename="c-login-powered-by-label"
                                value="msg://cuba.poweredBy"/>
                         <image id="poweredByImage"
+                               width="85px"
                                scaleMode="SCALE_DOWN"
                                stylename="c-login-powered-by-image">
                             <classpath path="com/company/devbrandlogin/web/screens/poweredby_icon.svg"/>
