@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        messagesPack="com.company.devbrandlogin.web.screens"
+        messagesPack="com.company.devbrandlogin.web.screens.login"
         caption="msg://loginWindow.caption">
     <actions>
         <action id="submit"
@@ -66,7 +66,7 @@
                                width="85px"
                                scaleMode="SCALE_DOWN"
                                stylename="c-login-powered-by-image">
-                            <classpath path="com/company/devbrandlogin/web/screens/poweredby_icon.svg"/>
+                            <classpath path="com/company/devbrandlogin/web/screens/login/resources/poweredby.svg"/>
                         </image>
                     </cssLayout>
 
@@ -79,7 +79,7 @@
                                align="MIDDLE_RIGHT"
                                box.expandRatio="1"
                                stylename="c-login-locales-image">
-                            <classpath path="com/company/devbrandlogin/web/screens/united-kingdom.svg"/>
+                            <classpath path="com/company/devbrandlogin/web/screens/login/resources/locales/en.svg"/>
                         </image>
                         <lookupField id="localesSelect"
                                      align="MIDDLE_RIGHT"
@@ -93,7 +93,7 @@
             <image id="brandingImage"
                    scaleMode="FILL"
                    stylename="c-login-image-container">
-                <classpath path="com/company/devbrandlogin/web/screens/demo_pic.png"/>
+                <classpath path="com/company/devbrandlogin/web/screens/login/resources/background.png"/>
             </image>
         </cssLayout>
     </layout>

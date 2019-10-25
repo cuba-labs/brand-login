@@ -1,4 +1,4 @@
-package com.company.devbrandlogin.web.screens;
+package com.company.devbrandlogin.web.screens.login;
 
 import com.haulmont.cuba.core.global.GlobalConfig;
 import com.haulmont.cuba.core.global.Resources;
@@ -55,6 +55,8 @@ public class BrandingLoginScreen extends Screen {
     @Inject
     protected HBoxLayout localesSelectBox;
     @Inject
+    protected Image countryImage;
+    @Inject
     protected LookupField<Locale> localesSelect;
     @Inject
     protected CheckBox rememberMeCheckBox;
@@ -86,7 +88,7 @@ public class BrandingLoginScreen extends Screen {
 
     protected void loadStyles() {
         StreamResource resource = new StreamResource(() ->
-                resources.getResourceAsStream("/com/company/devbrandlogin/web/screens/login.css"),
+                resources.getResourceAsStream("com/company/devbrandlogin/web/screens/login/resources/login.css"),
                 "login.css");
 
         Page.getCurrent().getStyles().add(resource);
@@ -127,6 +129,9 @@ public class BrandingLoginScreen extends Screen {
     protected void initLocales() {
         localesSelect.setOptionsMap(globalConfig.getAvailableLocales());
         localesSelect.setValue(app.getLocale());
+        countryImage.setSource(ClasspathResource.class)
+                .setPath("com/company/devbrandlogin/web/screens/login/resources/locales/"
+                        + app.getLocale().toString() + ".svg");
 
         boolean localeSelectVisible = globalConfig.getLocaleSelectVisible();
         localesSelectBox.setVisible(localeSelectVisible);
