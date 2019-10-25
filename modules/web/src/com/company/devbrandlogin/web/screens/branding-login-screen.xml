@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        messagesPack="com.company.devbrandlogin.web.screens">
+        messagesPack="com.company.devbrandlogin.web.screens"
+        caption="msg://loginWindow.caption">
     <actions>
         <action id="submit"
-                caption="msg://submitButton.caption"
+                caption="msg://loginWindow.okButton"
                 invoke="login" shortcut="ENTER"/>
     </actions>
     <layout>
@@ -22,26 +23,26 @@
                                stylename="c-login-logo"/>
                         <label id="welcomeLabel"
                                align="MIDDLE_CENTER"
-                               value="mainMsg://loginWindow.welcomeLabel"
+                               value="msg://loginWindow.welcomeLabel"
                                stylename="c-login-welcome-label"/>
                         <capsLockIndicator id="capsLockIndicator"
                                            align="MIDDLE_CENTER"/>
                         <vbox id="loginForm"
                               spacing="true">
                             <textField id="loginField"
-                                       caption="msg://loginField.caption"
+                                       caption="msg://loginWindow.loginField"
                                        htmlName="loginField"
-                                       inputPrompt="msg://loginField.placeholder"
+                                       inputPrompt="msg://loginWindow.loginPlaceholder"
                                        stylename="c-login-field"/>
                             <passwordField id="passwordField"
                                            autocomplete="true"
                                            capsLockIndicator="capsLockIndicator"
-                                           caption="msg://passwordField.caption"
+                                           caption="msg://loginWindow.passwordField"
                                            htmlName="passwordField"
-                                           inputPrompt="msg://passwordField.placeholder"
+                                           inputPrompt="msg://loginWindow.passwordPlaceholder"
                                            stylename="c-login-field"/>
                             <checkBox id="rememberMeCheckBox"
-                                      caption="mainMsg://loginWindow.rememberMe"/>
+                                      caption="msg://loginWindow.rememberMe"/>
                             <button id="loginButton"
                                     action="submit"
                                     align="MIDDLE_CENTER"
@@ -61,7 +62,7 @@
                         <label id="poweredByLabel"
                                htmlEnabled="true"
                                stylename="c-login-powered-by-label"
-                               value="msg://poweredByLabel"/>
+                               value="msg://cuba.poweredBy"/>
                         <image id="poweredByImage"
                                scaleMode="SCALE_DOWN"
                                stylename="c-login-powered-by-image">
