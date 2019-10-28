@@ -1,21 +1,10 @@
-.c-login-layout {
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-.c-login-image-container {
-  flex-grow: 1;
-  height: 100%;
-}
-
-.c-login-container .c-login-field {
+.c-login-layout .c-login-field {
   height: 40px;
   width: 350px;
   margin-top: 10px;
 }
 
-.c-login-container .c-login-button {
+.c-login-layout .c-login-button {
   background: #1b6198;
   border-radius: 3px;
   color: #e8eff5;
@@ -59,17 +48,11 @@
   width: auto;
 }
 
-.c-login-powered-by-label > a {
-  display: block;
-  width: 100%;
-  height: 15px;
+.c-login-powered-by-link {
   position: absolute;
-  top: 0;
-  left: 0;
   margin: 14px 0px;
 }
 
 .c-login-powered-by-image {
-  height: 15px;
   margin: 14px 0;
 }
