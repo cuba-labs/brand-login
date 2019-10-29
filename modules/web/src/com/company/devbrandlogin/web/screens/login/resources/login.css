@@ -26,18 +26,7 @@
 }
 
 .c-login-locales-select.v-filterselect > input.v-filterselect-input {
-  background: 0;
-  border-width: 0;
-  box-shadow: none;
   text-align: right;
-}
-
-.c-login-locales-image {
-  height: 20px;
-}
-
-.c-login-powered-by-box .v-spacing {
-  width: 5px;
 }
 
 .c-login-powered-by-label {

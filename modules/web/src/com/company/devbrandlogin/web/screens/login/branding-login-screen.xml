@@ -83,7 +83,7 @@
                     <lookupField id="localesSelect"
                                  align="MIDDLE_RIGHT"
                                  nullOptionVisible="false"
-                                 stylename="c-login-locales-select"
+                                 stylename="c-login-locales-select borderless"
                                  textInputAllowed="false"
                                  width="100px"/>
                 </hbox>
