@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         messagesPack="com.company.devbrandlogin.web.screens.login"
-        caption="msg://loginWindow.caption">
+        caption="mainMsg://loginWindow.caption">
     <actions>
         <action id="submit"
                 caption="msg://loginWindow.okButton"
@@ -31,25 +31,25 @@
                         <label id="welcomeLabel"
                                align="MIDDLE_CENTER"
                                stylename="c-login-welcome-label"
-                               value="msg://loginWindow.welcomeLabel"/>
+                               value="mainMsg://loginWindow.welcomeLabel"/>
                         <capsLockIndicator id="capsLockIndicator"
                                            align="MIDDLE_CENTER"/>
                         <vbox id="loginForm"
                               spacing="true">
                             <textField id="loginField"
-                                       caption="msg://loginWindow.loginField"
+                                       caption="mainMsg://loginWindow.loginField"
                                        htmlName="loginField"
-                                       inputPrompt="msg://loginWindow.loginPlaceholder"
+                                       inputPrompt="mainMsg://loginWindow.loginPlaceholder"
                                        stylename="c-login-field"/>
                             <passwordField id="passwordField"
                                            autocomplete="true"
                                            capsLockIndicator="capsLockIndicator"
-                                           caption="msg://loginWindow.passwordField"
+                                           caption="mainMsg://loginWindow.passwordField"
                                            htmlName="passwordField"
-                                           inputPrompt="msg://loginWindow.passwordPlaceholder"
+                                           inputPrompt="mainMsg://loginWindow.passwordPlaceholder"
                                            stylename="c-login-field"/>
                             <checkBox id="rememberMeCheckBox"
-                                      caption="msg://loginWindow.rememberMe"/>
+                                      caption="mainMsg://loginWindow.rememberMe"/>
                             <button id="loginButton"
                                     action="submit"
                                     align="MIDDLE_CENTER"
@@ -80,23 +80,12 @@
                         </image>
                     </cssLayout>
 
-                    <hbox id="localesSelectBox"
-                          align="MIDDLE_RIGHT"
-                          height="100%">
-                        <image id="countryImage"
-                               scaleMode="SCALE_DOWN"
-                               align="MIDDLE_RIGHT"
-                               box.expandRatio="1"
-                               stylename="c-login-locales-image">
-                            <classpath path="com/company/devbrandlogin/web/screens/login/resources/locales/en.svg"/>
-                        </image>
-                        <lookupField id="localesSelect"
-                                     align="MIDDLE_RIGHT"
-                                     nullOptionVisible="false"
-                                     stylename="c-login-locales-select"
-                                     textInputAllowed="false"
-                                     width="100px"/>
-                    </hbox>
+                    <lookupField id="localesSelect"
+                                 align="MIDDLE_RIGHT"
+                                 nullOptionVisible="false"
+                                 stylename="c-login-locales-select"
+                                 textInputAllowed="false"
+                                 width="100px"/>
                 </hbox>
             </vbox>
             <image id="backgroundImage"

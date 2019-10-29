@@ -1,6 +1,7 @@
 package com.company.devbrandlogin.web.screens.login;
 
 import com.haulmont.cuba.core.global.GlobalConfig;
+import com.haulmont.cuba.core.global.Messages;
 import com.haulmont.cuba.core.global.Resources;
 import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.Screens;
@@ -38,20 +39,16 @@ public class BrandingLoginScreen extends Screen {
     protected LoginCookies loginCookies;
     @Inject
     protected LoginScreenAuthDelegate authDelegate;
+    @Inject
+    protected Messages messages;
 
     @Inject
     protected Screens screens;
     @Inject
     protected Notifications notifications;
-    @Inject
-    protected MessageBundle messageBundle;
 
     @Inject
     protected Image logoImage;
-    @Inject
-    protected HBoxLayout localesSelectBox;
-    @Inject
-    protected Image countryImage;
     @Inject
     protected LookupField<Locale> localesSelect;
     @Inject
@@ -96,8 +93,8 @@ public class BrandingLoginScreen extends Screen {
 
     protected void loadStyles() {
         StreamResource resource = new StreamResource(() ->
-                resources.getResourceAsStream("com/company/devbrandlogin/web/screens/login/resources/login.css"),
-                "login.css");
+                resources.getResourceAsStream(
+                        "com/company/devbrandlogin/web/screens/login/resources/login.css"),"login.css");
 
         Page.getCurrent().getStyles().add(resource);
     }
@@ -112,18 +109,7 @@ public class BrandingLoginScreen extends Screen {
     protected void initLocales() {
         localesSelect.setOptionsMap(globalConfig.getAvailableLocales());
         localesSelect.setValue(app.getLocale());
-        countryImage.setSource(ClasspathResource.class)
-                .setPath("com/company/devbrandlogin/web/screens/login/resources/locales/"
-                        + app.getLocale().toString() + ".svg");
-
-        boolean localeSelectVisible = globalConfig.getLocaleSelectVisible();
-        localesSelectBox.setVisible(localeSelectVisible);
-
-        // if old layout is used
-        Component localesSelectLabel = getWindow().getComponent("localesSelectLabel");
-        if (localesSelectLabel != null) {
-            localesSelectLabel.setVisible(localeSelectVisible);
-        }
+        localesSelect.setVisible(globalConfig.getLocaleSelectVisible());
 
         localesSelect.addValueChangeListener(e -> {
             app.setLocale(e.getValue());
@@ -147,7 +133,7 @@ public class BrandingLoginScreen extends Screen {
     }
 
     protected void initLogoImage() {
-        String loginLogoImagePath = messageBundle.getMessage("loginWindow.logoImage");
+        String loginLogoImagePath = messages.getMainMessage("loginWindow.logoImage");
         if (StringUtils.isBlank(loginLogoImagePath) || "loginWindow.logoImage".equals(loginLogoImagePath)) {
             logoImage.setVisible(false);
         } else {
@@ -179,8 +165,8 @@ public class BrandingLoginScreen extends Screen {
     }
 
     protected void showUnhandledExceptionOnLogin(@SuppressWarnings("unused") Exception e) {
-        String title = messageBundle.getMessage("loginWindow.loginFailed");
-        String message = messageBundle.getMessage("loginWindow.pleaseContactAdministrator");
+        String title = messages.getMainMessage("loginWindow.loginFailed");
+        String message = messages.getMainMessage("loginWindow.pleaseContactAdministrator");
 
         notifications.create(Notifications.NotificationType.ERROR)
                 .withCaption(title)
@@ -189,7 +175,7 @@ public class BrandingLoginScreen extends Screen {
     }
 
     protected void showLoginException(String message) {
-        String title = messageBundle.getMessage("loginWindow.loginFailed");
+        String title = messages.getMainMessage("loginWindow.loginFailed");
 
         notifications.create(Notifications.NotificationType.ERROR)
                 .withCaption(title)
@@ -211,7 +197,7 @@ public class BrandingLoginScreen extends Screen {
 
         if (StringUtils.isEmpty(login) || StringUtils.isEmpty(password)) {
             notifications.create(Notifications.NotificationType.WARNING)
-                    .withCaption(messageBundle.getMessage("loginWindow.emptyLoginOrPassword"))
+                    .withCaption(messages.getMainMessage("loginWindow.emptyLoginOrPassword"))
                     .show();
             return;
         }
