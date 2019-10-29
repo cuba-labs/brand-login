@@ -4,6 +4,7 @@ import com.haulmont.cuba.core.global.GlobalConfig;
 import com.haulmont.cuba.core.global.Messages;
 import com.haulmont.cuba.core.global.Resources;
 import com.haulmont.cuba.gui.Notifications;
+import com.haulmont.cuba.gui.Route;
 import com.haulmont.cuba.gui.Screens;
 import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.screen.*;
@@ -22,10 +23,11 @@ import org.slf4j.LoggerFactory;
 import javax.inject.Inject;
 import java.util.Locale;
 
-@UiController("myLogin")
-@UiDescriptor("branding-login-screen.xml")
-public class BrandingLoginScreen extends Screen {
-    private static final Logger log = LoggerFactory.getLogger(BrandingLoginScreen.class);
+@Route(path = "login", root = true)
+@UiController("brandLogin")
+@UiDescriptor("brand-login-screen.xml")
+public class BrandLoginScreen extends Screen {
+    private static final Logger log = LoggerFactory.getLogger(BrandLoginScreen.class);
 
     @Inject
     protected Resources resources;
@@ -57,6 +59,8 @@ public class BrandingLoginScreen extends Screen {
     protected PasswordField passwordField;
     @Inject
     protected TextField<String> loginField;
+    @Inject
+    protected HBoxLayout bottomPanel;
 
     @Subscribe
     public void onInit(InitEvent event) {
@@ -73,6 +77,8 @@ public class BrandingLoginScreen extends Screen {
         initLocales();
 
         initRememberMe();
+
+        initBottomPanel();
     }
 
     @Subscribe
@@ -94,7 +100,7 @@ public class BrandingLoginScreen extends Screen {
     protected void loadStyles() {
         StreamResource resource = new StreamResource(() ->
                 resources.getResourceAsStream(
-                        "com/company/devbrandlogin/web/screens/login/resources/login.css"),"login.css");
+                        "com/company/devbrandlogin/web/screens/login/resources/login.css"), "login.css");
 
         Page.getCurrent().getStyles().add(resource);
     }
@@ -124,8 +130,8 @@ public class BrandingLoginScreen extends Screen {
 
             Screen loginScreen = screens.create(screenId, OpenMode.ROOT);
 
-            if (loginScreen instanceof BrandingLoginScreen) {
-                ((BrandingLoginScreen) loginScreen).setAuthInfo(authInfo);
+            if (loginScreen instanceof BrandLoginScreen) {
+                ((BrandLoginScreen) loginScreen).setAuthInfo(authInfo);
             }
 
             loginScreen.show();
@@ -145,6 +151,12 @@ public class BrandingLoginScreen extends Screen {
         if (!webConfig.getRememberMeEnabled()) {
             rememberMeCheckBox.setValue(false);
             rememberMeCheckBox.setVisible(false);
+        }
+    }
+
+    protected void initBottomPanel() {
+        if (!webConfig.getLoginDialogPoweredByLinkVisible() && !globalConfig.getLocaleSelectVisible()) {
+            bottomPanel.setVisible(false);
         }
     }
 
@@ -183,14 +195,6 @@ public class BrandingLoginScreen extends Screen {
                 .show();
     }
 
-    protected void setAuthInfo(LoginScreenAuthDelegate.AuthInfo authInfo) {
-        loginField.setValue(authInfo.getLogin());
-        passwordField.setValue(authInfo.getPassword());
-        rememberMeCheckBox.setValue(authInfo.getRememberMe());
-
-        localesSelect.focus();
-    }
-
     protected void doLogin() {
         String login = loginField.getValue();
         String password = passwordField.getValue() != null ? passwordField.getValue() : "";
@@ -218,5 +222,13 @@ public class BrandingLoginScreen extends Screen {
 
             showUnhandledExceptionOnLogin(e);
         }
+    }
+
+    protected void setAuthInfo(LoginScreenAuthDelegate.AuthInfo authInfo) {
+        loginField.setValue(authInfo.getLogin());
+        passwordField.setValue(authInfo.getPassword());
+        rememberMeCheckBox.setValue(authInfo.getRememberMe());
+
+        localesSelect.focus();
     }
 }
