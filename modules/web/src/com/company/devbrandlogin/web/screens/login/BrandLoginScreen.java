@@ -83,7 +83,7 @@ public class BrandLoginScreen extends Screen {
 
     @Subscribe
     protected void onAfterShow(AfterShowEvent event) {
-        loginCookies.doRememberMeLogin(localesSelect.isVisibleRecursive());
+        authDelegate.doRememberMeLogin(localesSelect.isVisibleRecursive());
     }
 
     @Subscribe("submit")
