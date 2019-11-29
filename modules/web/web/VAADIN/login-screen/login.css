@@ -1,0 +1,52 @@
+.c-login-wrapper .c-login-field {
+  height: 40px;
+  width: 350px;
+  margin-top: 10px;
+}
+
+.c-login-wrapper .c-login-button {
+  background: #1b6198;
+  border-radius: 3px;
+  color: #e8eff5;
+  margin-top: 30px;
+  height: 45px;
+  width: 200px;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+.c-login-logo {
+  margin-bottom: 15px;
+}
+
+.c-login-welcome-label {
+  font-size: 25px;
+  color: #1b6198;
+  font-weight: 600;
+}
+
+.c-login-locales-select.v-filterselect > input.v-filterselect-input {
+  text-align: right;
+}
+
+.c-login-powered-by-link {
+  font-size: 14px;
+}
+
+.c-login-powered-by-link a {
+  margin-left: 2px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  color: #006bac;
+  background: url(cuba-icon-login.png) no-repeat left center;
+  background-size: contain;
+  background-clip: border-box;
+  padding-left: 30px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.c-login-layout .c-image.c-login-background {
+  object-fit: cover;
+}

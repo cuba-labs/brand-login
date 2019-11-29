@@ -11,11 +11,12 @@
         <hbox id="mainLayout"
               expand="backgroundImage"
               height="100%"
+              stylename="c-login-layout"
               width="100%">
-            <vbox id="loginlayout"
+            <vbox id="loginWrapper"
                   expand="loginPanel"
                   height="100%"
-                  stylename="c-login-layout"
+                  stylename="c-login-wrapper"
                   width="500px">
                 <vbox id="loginPanel">
                     <vbox id="loginMainBox"
@@ -61,25 +62,11 @@
                       margin="false, true, false, true"
                       height="40px"
                       width="100%">
-
-                    <cssLayout id="poweredByLink"
-                               height="100%"
-                               stylename="c-login-powered-by-box">
-                        <label htmlEnabled="true"
-                               stylename="c-login-powered-by-label"
-                               value="msg://cuba.poweredBy"/>
-                        <link url="http://cuba-platform.com"
-                              stylename="c-login-powered-by-link"
-                              height="15px"
-                              width="85px"/>
-                        <image scaleMode="SCALE_DOWN"
-                               stylename="c-login-powered-by-image"
-                               height="15px"
-                               width="85px">
-                            <classpath path="com/company/devbrandlogin/web/screens/login/resources/poweredby.svg"/>
-                        </image>
-                    </cssLayout>
-
+                    <label id="poweredByLink"
+                           align="MIDDLE_LEFT"
+                           htmlEnabled="true"
+                           stylename="c-login-powered-by-link"
+                           value="mainMsg://cuba.poweredBy"/>
                     <lookupField id="localesSelect"
                                  align="MIDDLE_RIGHT"
                                  nullOptionVisible="false"
@@ -89,9 +76,10 @@
                 </hbox>
             </vbox>
             <image id="backgroundImage"
-                   scaleMode="FILL"
+                   scaleMode="SCALE_DOWN"
+                   stylename="c-login-background"
                    height="100%">
-                <classpath path="com/company/devbrandlogin/web/screens/login/resources/background.png"/>
+                <relativePath path="VAADIN/login-screen/background.svg"/>
             </image>
         </hbox>
     </layout>

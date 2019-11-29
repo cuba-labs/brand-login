@@ -2,7 +2,6 @@ package com.company.devbrandlogin.web.screens.login;
 
 import com.haulmont.cuba.core.global.GlobalConfig;
 import com.haulmont.cuba.core.global.Messages;
-import com.haulmont.cuba.core.global.Resources;
 import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.Route;
 import com.haulmont.cuba.gui.Screens;
@@ -12,10 +11,9 @@ import com.haulmont.cuba.security.global.InternalAuthenticationException;
 import com.haulmont.cuba.security.global.LoginException;
 import com.haulmont.cuba.web.DefaultApp;
 import com.haulmont.cuba.web.WebConfig;
-import com.haulmont.cuba.web.security.LoginCookies;
+import com.haulmont.cuba.web.gui.screen.ScreenDependencyUtils;
 import com.haulmont.cuba.web.security.LoginScreenAuthDelegate;
-import com.vaadin.server.Page;
-import com.vaadin.server.StreamResource;
+import com.vaadin.ui.Dependency;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,15 +28,11 @@ public class BrandLoginScreen extends Screen {
     private static final Logger log = LoggerFactory.getLogger(BrandLoginScreen.class);
 
     @Inject
-    protected Resources resources;
-    @Inject
     protected WebConfig webConfig;
     @Inject
     protected GlobalConfig globalConfig;
     @Inject
     protected DefaultApp app;
-    @Inject
-    protected LoginCookies loginCookies;
     @Inject
     protected LoginScreenAuthDelegate authDelegate;
     @Inject
@@ -91,18 +85,15 @@ public class BrandLoginScreen extends Screen {
         doLogin();
 
         if (Boolean.TRUE.equals(rememberMeCheckBox.getValue())) {
-            loginCookies.setRememberMeCookies(loginField.getValue());
+            authDelegate.setRememberMeCookies(loginField.getValue());
         } else {
-            loginCookies.resetRememberCookies();
+            authDelegate.resetRememberCookies();
         }
     }
 
     protected void loadStyles() {
-        StreamResource resource = new StreamResource(() ->
-                resources.getResourceAsStream(
-                        "com/company/devbrandlogin/web/screens/login/resources/login.css"), "login.css");
-
-        Page.getCurrent().getStyles().add(resource);
+        ScreenDependencyUtils.addScreenDependency(this,
+                "vaadin://login-screen/login.css", Dependency.Type.STYLESHEET);
     }
 
     protected void initPoweredByLink() {
