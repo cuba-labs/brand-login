@@ -93,7 +93,7 @@ public class BrandLoginScreen extends Screen {
 
     protected void loadStyles() {
         ScreenDependencyUtils.addScreenDependency(this,
-                "vaadin://login-screen/login.css", Dependency.Type.STYLESHEET);
+                "vaadin://brand-login-screen/login.css", Dependency.Type.STYLESHEET);
     }
 
     protected void initPoweredByLink() {

@@ -79,7 +79,7 @@
                    scaleMode="COVER"
                    stylename="c-login-background"
                    height="100%">
-                <relativePath path="VAADIN/login-screen/background.svg"/>
+                <relativePath path="VAADIN/brand-login-screen/background.svg"/>
             </image>
         </hbox>
     </layout>
