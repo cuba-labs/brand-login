@@ -76,7 +76,7 @@
                 </hbox>
             </vbox>
             <image id="backgroundImage"
-                   scaleMode="SCALE_DOWN"
+                   scaleMode="COVER"
                    stylename="c-login-background"
                    height="100%">
                 <relativePath path="VAADIN/login-screen/background.svg"/>

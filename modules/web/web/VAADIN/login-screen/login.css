@@ -6,7 +6,7 @@
 
 .c-login-wrapper .c-login-button {
   background: #1b6198;
-  border-radius: 3px;
+  border-radius: 2px;
   color: #e8eff5;
   margin-top: 30px;
   height: 45px;
@@ -45,8 +45,4 @@
   padding-left: 30px;
   padding-top: 3px;
   padding-bottom: 3px;
-}
-
-.c-login-layout .c-image.c-login-background {
-  object-fit: cover;
 }
