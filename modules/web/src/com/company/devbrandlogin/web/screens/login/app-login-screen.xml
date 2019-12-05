@@ -40,14 +40,12 @@
                             <textField id="loginField"
                                        caption="mainMsg://loginWindow.loginField"
                                        htmlName="loginField"
-                                       inputPrompt="mainMsg://loginWindow.loginPlaceholder"
                                        stylename="c-login-field"/>
                             <passwordField id="passwordField"
                                            autocomplete="true"
                                            capsLockIndicator="capsLockIndicator"
                                            caption="mainMsg://loginWindow.passwordField"
                                            htmlName="passwordField"
-                                           inputPrompt="mainMsg://loginWindow.passwordPlaceholder"
                                            stylename="c-login-field"/>
                             <checkBox id="rememberMeCheckBox"
                                       caption="mainMsg://loginWindow.rememberMe"/>
