@@ -1,3 +1,11 @@
+.c-login-layout {
+  display: flex;
+}
+
+.c-login-wrapper {
+  min-width: 500px;
+}
+
 .c-login-wrapper .c-login-field {
   height: 40px;
   width: 350px;
@@ -13,6 +21,10 @@
   width: 200px;
   box-shadow: none;
   font-weight: 700;
+}
+
+.c-login-background {
+  flex-basis: 100%;
 }
 
 .c-login-logo {
@@ -37,7 +49,7 @@
 }
 
 .c-login-powered-by-link {
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .c-login-powered-by-link a {
@@ -52,4 +64,14 @@
   padding-left: 30px;
   padding-top: 3px;
   padding-bottom: 3px;
+}
+
+@media (max-width: 768px) {
+  .c-login-wrapper {
+    min-width: 100%;
+  }
+
+  .c-login-bottom-panel {
+    max-width: 500px;
+  }
 }

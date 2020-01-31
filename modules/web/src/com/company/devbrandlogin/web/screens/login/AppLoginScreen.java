@@ -17,6 +17,9 @@ public class AppLoginScreen extends LoginScreen {
     @Inject
     protected HBoxLayout bottomPanel;
 
+    @Inject
+    protected Label<String> poweredByLink;
+
     @Subscribe
     public void onAppLoginScreenInit(InitEvent event) {
         loadStyles();
@@ -35,8 +38,12 @@ public class AppLoginScreen extends LoginScreen {
     }
 
     protected void initBottomPanel() {
-        if (!webConfig.getLoginDialogPoweredByLinkVisible() && !globalConfig.getLocaleSelectVisible()) {
-            bottomPanel.setVisible(false);
+        if (!globalConfig.getLocaleSelectVisible()) {
+            poweredByLink.setAlignment(Component.Alignment.MIDDLE_CENTER);
+
+            if (!webConfig.getLoginDialogPoweredByLinkVisible()) {
+                bottomPanel.setVisible(false);
+            }
         }
     }
 }

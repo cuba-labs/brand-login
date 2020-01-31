@@ -8,16 +8,14 @@
                 shortcut="ENTER"/>
     </actions>
     <layout>
-        <hbox id="mainLayout"
-              expand="backgroundImage"
+        <cssLayout id="mainLayout"
               height="100%"
               stylename="c-login-layout"
               width="100%">
             <vbox id="loginWrapper"
                   expand="loginPanel"
                   height="100%"
-                  stylename="c-login-wrapper"
-                  width="500px">
+                  stylename="c-login-wrapper">
                 <vbox id="loginPanel">
                     <vbox id="loginMainBox"
                           align="MIDDLE_CENTER"
@@ -59,7 +57,9 @@
                     </vbox>
                 </vbox>
                 <hbox id="bottomPanel"
+                      align="MIDDLE_CENTER"
                       margin="false, true, false, true"
+                      stylename="c-login-bottom-panel"
                       height="40px"
                       width="100%">
                     <label id="poweredByLink"
@@ -77,10 +77,9 @@
             </vbox>
             <image id="backgroundImage"
                    scaleMode="COVER"
-                   stylename="c-login-background"
-                   height="100%">
+                   stylename="c-login-background">
                 <relativePath path="VAADIN/brand-login-screen/background.svg"/>
             </image>
-        </hbox>
+        </cssLayout>
     </layout>
 </window>
