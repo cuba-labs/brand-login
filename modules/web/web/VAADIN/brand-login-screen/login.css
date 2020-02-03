@@ -6,6 +6,10 @@
   min-width: 500px;
 }
 
+.v-ie .c-login-wrapper {
+  max-width: 500px;
+}
+
 .c-login-wrapper .c-login-field {
   height: 40px;
   width: 350px;
@@ -66,9 +70,13 @@
   padding-bottom: 3px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .c-login-wrapper {
     min-width: 100%;
+  }
+
+  .v-ie .c-login-wrapper {
+    max-width: 100%;
   }
 
   .c-login-bottom-panel {
