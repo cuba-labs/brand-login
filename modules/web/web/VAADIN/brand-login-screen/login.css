@@ -42,7 +42,7 @@
   font-weight: 600;
 }
 
-.v-caption-c-login-field.v-caption-inline-icon span.v-icon {
+.v-slot-inline-icon .v-caption-c-login-field.v-caption-inline-icon span.v-icon {
   bottom: 0;
   color: #9a9a9a;
   font-size: 16px;
