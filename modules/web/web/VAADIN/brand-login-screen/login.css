@@ -13,14 +13,9 @@
 }
 
 .c-login-wrapper .c-login-button {
-  background: #1b6198;
-  border-radius: 2px;
-  color: #e8eff5;
   margin-top: 30px;
   height: 45px;
   width: 200px;
-  box-shadow: none;
-  font-weight: 700;
 }
 
 .c-login-background {
@@ -36,7 +31,7 @@
   width: 64px;
 }
 
-.c-login-welcome-label {
+.c-login-welcome-label.v-label {
   font-size: 25px;
   color: #1b6198;
   font-weight: 600;
@@ -44,7 +39,7 @@
 
 .v-slot-inline-icon .v-caption-c-login-field.v-caption-inline-icon span.v-icon {
   bottom: 0;
-  color: #9a9a9a;
+  color: var(--text-dim-color, #9a9a9a);
   font-size: 16px;
   line-height: 40px;
 }

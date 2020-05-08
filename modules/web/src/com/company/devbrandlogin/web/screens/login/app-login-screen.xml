@@ -64,7 +64,7 @@
                             <button id="loginButton"
                                     action="submit"
                                     align="MIDDLE_CENTER"
-                                    stylename="c-login-button"/>
+                                    stylename="c-login-button primary"/>
                         </vbox>
                     </vbox>
                 </vbox>
