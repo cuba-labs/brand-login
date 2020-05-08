@@ -7,15 +7,11 @@
 }
 
 .c-login-wrapper .c-login-field {
-  height: 40px;
-  width: 350px;
   margin-top: 10px;
 }
 
 .c-login-wrapper .c-login-button {
   margin-top: 30px;
-  height: 45px;
-  width: 200px;
 }
 
 .c-login-background {
@@ -31,7 +27,7 @@
   width: 64px;
 }
 
-.c-login-welcome-label.v-label {
+.c-login-welcome-label.v-label-c-login-welcome-label.v-label {
   font-size: 25px;
   color: #1b6198;
   font-weight: 600;
@@ -44,6 +40,10 @@
   line-height: 40px;
 }
 
+.havana .v-slot-inline-icon .v-caption-inline-icon img.v-icon {
+  bottom: 13px;
+}
+
 .v-expand>.v-slot.v-slot-c-login-locales-select {
   max-width: 500px;
   position: absolute;
@@ -52,12 +52,21 @@
   height: 40px;
 }
 
-.c-login-locales-select.v-filterselect {
+.c-login-locales-select.v-filterselect-c-login-locales-select.v-filterselect {
   position: absolute;
   right: 10px;
   bottom: 0;
   height: 40px;
+  width: 100px;
   z-index: 1;
+}
+
+.helium.large .c-login-locales-select.v-filterselect-c-login-locales-select.v-filterselect {
+  width: 120px;
+}
+
+.c-login-locales-select.borderless > input.v-filterselect-input {
+  border: 0;
 }
 
 .c-login-locales-select.v-filterselect > input.v-filterselect-input {
@@ -86,8 +95,8 @@
   padding-bottom: 3px;
 }
 
-.havana .v-slot-inline-icon .v-caption-inline-icon img.v-icon {
-  bottom: 13px;
+.helium.large .v-label.c-login-powered-by-link a {
+  padding-left: 32px;
 }
 
 @media (max-width: 992px) {
@@ -108,17 +117,19 @@
     position: relative;
     bottom: auto;
     left: auto;
-    height: 40px;
   }
 
   .c-login-locales-select.v-filterselect {
     position: relative;
     right: auto;
     bottom: auto;
-    height: 40px;
   }
 
   .c-login-remember-me-checkbox {
     margin-top: 1px;
+  }
+
+  .c-login-locales-select.v-filterselect-c-login-locales-select.v-filterselect {
+    right: 0;
   }
 }

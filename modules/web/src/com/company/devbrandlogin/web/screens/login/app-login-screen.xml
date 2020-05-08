@@ -39,6 +39,8 @@
                                        htmlName="loginField"
                                        icon="USER"
                                        inputPrompt="mainMsg://loginWindow.loginPlaceholder"
+                                       height="40px"
+                                       width="350px"
                                        stylename="c-login-field inline-icon"/>
                             <passwordField id="passwordField"
                                            autocomplete="true"
@@ -46,6 +48,8 @@
                                            htmlName="passwordField"
                                            icon="LOCK"
                                            inputPrompt="mainMsg://loginWindow.passwordPlaceholder"
+                                           height="40px"
+                                           width="350px"
                                            stylename="c-login-field inline-icon"/>
                             <hbox id="paramsBox"
                                   align="MIDDLE_CENTER"
@@ -58,12 +62,13 @@
                                              align="MIDDLE_RIGHT"
                                              nullOptionVisible="false"
                                              stylename="c-login-locales-select borderless"
-                                             textInputAllowed="false"
-                                             width="100px"/>
+                                             textInputAllowed="false"/>
                             </hbox>
                             <button id="loginButton"
                                     action="submit"
                                     align="MIDDLE_CENTER"
+                                    width="200px"
+                                    height="40px"
                                     stylename="c-login-button primary"/>
                         </vbox>
                     </vbox>
