@@ -29,7 +29,6 @@
 
 .c-login-welcome-label.v-label-c-login-welcome-label.v-label {
   font-size: 25px;
-  color: #1b6198;
   font-weight: 600;
 }
 
@@ -86,7 +85,6 @@
   display: inline-block;
   text-decoration: none;
   font-weight: bold;
-  color: #006bac;
   background: url(cuba-icon-login.svg) no-repeat left center;
   background-size: contain;
   background-clip: border-box;

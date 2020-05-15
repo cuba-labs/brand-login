@@ -29,7 +29,7 @@
                                width="AUTO"/>
                         <label id="welcomeLabel"
                                align="MIDDLE_CENTER"
-                               stylename="c-login-welcome-label"
+                               stylename="c-login-welcome-label h1"
                                value="mainMsg://loginWindow.welcomeLabel"/>
                         <capsLockIndicator id="capsLockIndicator"
                                            align="MIDDLE_CENTER"/>
